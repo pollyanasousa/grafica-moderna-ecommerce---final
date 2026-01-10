@@ -1,18 +1,18 @@
-<!DOCTYPE html> <!-- Define o tipo de documento como HTML5 -->
-<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8"> <!-- Define a codificação de caracteres -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade para dispositivos móveis -->
-    <meta name="description" content="Gráfica Online - Produtos gráficos de qualidade com entrega rápida"> <!-- Descrição para SEO -->
-    <title>Gráfica Online - Impressões de Qualidade</title> <!-- Título da aba do navegador -->
-    <link rel="stylesheet" href="css/styles.css"> <!-- Importa o arquivo CSS -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gráfica Online - Produtos gráficos de qualidade com entrega rápida">
+    <title>Gráfica Online - Impressões de Qualidade</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Cabeçalho do site -->
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>GRÁFICA <span>PREMIUM</span></h1> <!-- Logo da empresa -->
+                <h1>GRÁFICA <span>PREMIUM</span></h1>
             </div>
             <!-- Menu de navegação principal -->
             <nav class="nav" aria-label="Navegação principal">
@@ -21,6 +21,20 @@
                     <li><a href="#produtos" class="nav-link">Produtos</a></li>
                     <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
+                <!-- Botão de alternância de tema -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
@@ -32,7 +46,7 @@
             <div class="hero-content">
                 <h2 class="hero-title">Impressões que Fazem a Diferença</h2>
                 <p class="hero-subtitle">Qualidade Profissional Para o Seu Negócio</p>
-                <a href="#produtos" class="hero-btn">Ver Produtos</a> <!-- Botão que leva para produtos -->
+                <a href="#produtos" class="hero-btn">Ver Produtos</a>
             </div>
         </section>
 
@@ -42,20 +56,40 @@
                 <h2 class="section-title">Nossos Produtos</h2>
                 <p class="section-subtitle">Soluções Completas em Impressão</p>
                 
-                <div class="products-grid"> <!-- Grade de produtos -->
+                <!-- Contador de itens adicionados -->
+                <div id="cart-counter" class="cart-counter">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"/>
+                        <circle cx="20" cy="21" r="1"/>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                    </svg>
+                    <span id="cart-count">0</span> itens adicionados
+                </div>
+
+                <div class="products-grid">
                     
                     <!-- Produto 1 -->
                     <article class="product-card">
-                        <div class="product-badge">Popular</div> <!-- Selo de destaque -->
+                        <div class="product-badge">Popular</div>
                         <div class="product-image">
                             <img src="img/cartao-4x4.png" alt="Cartões de visita em papel couché com acabamento de qualidade">
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Cartão de Visita</h3>
                             <p class="product-description">Papel couché 300g com acabamento verniz localizado. Pacote com 100 unidades.</p>
+                            <button class="toggle-details">Ver Detalhes</button>
+                            <div class="product-details" style="display: none;">
+                                <ul>
+                                    <li>Dimensões: 9x5 cm</li>
+                                    <li>Papel: Couché 300g</li>
+                                    <li>Acabamento: Verniz localizado</li>
+                                    <li>Impressão: 4x4 cores (frente e verso)</li>
+                                    <li>Prazo de entrega: 3 dias úteis</li>
+                                </ul>
+                            </div>
                             <div class="product-footer">
                                 <p class="product-price">R$ 49,90</p>
-                                <button class="btn-buy">Comprar</button>
+                                <button class="btn-buy" data-product="Cartão de Visita" data-price="49.90">Comprar</button>
                             </div>
                         </div>
                     </article>
@@ -69,9 +103,19 @@
                         <div class="product-info">
                             <h3 class="product-name">Panfletos A5</h3>
                             <p class="product-description">Impressão colorida frente e verso, papel couché 115g brilhante. 1000 unidades.</p>
+                            <button class="toggle-details">Ver Detalhes</button>
+                            <div class="product-details" style="display: none;">
+                                <ul>
+                                    <li>Dimensões: A5 (14,8x21 cm)</li>
+                                    <li>Papel: Couché 115g brilhante</li>
+                                    <li>Impressão: 4x4 cores (frente e verso)</li>
+                                    <li>Quantidade: 1000 unidades</li>
+                                    <li>Prazo de entrega: 5 dias úteis</li>
+                                </ul>
+                            </div>
                             <div class="product-footer">
                                 <p class="product-price">R$ 189,90</p>
-                                <button class="btn-buy">Comprar</button>
+                                <button class="btn-buy" data-product="Panfletos A5" data-price="189.90">Comprar</button>
                             </div>
                         </div>
                     </article>
@@ -84,9 +128,19 @@
                         <div class="product-info">
                             <h3 class="product-name">Banner em Lona</h3>
                             <p class="product-description">Impressão digital em lona 440g com acabamento e ilhós. Tamanho 1x2 metros.</p>
+                            <button class="toggle-details">Ver Detalhes</button>
+                            <div class="product-details" style="display: none;">
+                                <ul>
+                                    <li>Dimensões: 1x2 metros</li>
+                                    <li>Material: Lona 440g</li>
+                                    <li>Acabamento: Ilhós nas bordas</li>
+                                    <li>Impressão: Digital alta resolução</li>
+                                    <li>Prazo de entrega: 2 dias úteis</li>
+                                </ul>
+                            </div>
                             <div class="product-footer">
                                 <p class="product-price">R$ 129,90</p>
-                                <button class="btn-buy">Comprar</button>
+                                <button class="btn-buy" data-product="Banner em Lona" data-price="129.90">Comprar</button>
                             </div>
                         </div>
                     </article>
@@ -100,9 +154,19 @@
                         <div class="product-info">
                             <h3 class="product-name">Adesivos Personalizados</h3>
                             <p class="product-description">Vinil adesivo de alta qualidade com corte especial. 100 unidades de até 10cm.</p>
+                            <button class="toggle-details">Ver Detalhes</button>
+                            <div class="product-details" style="display: none;">
+                                <ul>
+                                    <li>Dimensões: Até 10cm</li>
+                                    <li>Material: Vinil adesivo</li>
+                                    <li>Corte: Especial personalizado</li>
+                                    <li>Quantidade: 100 unidades</li>
+                                    <li>Prazo de entrega: 4 dias úteis</li>
+                                </ul>
+                            </div>
                             <div class="product-footer">
                                 <p class="product-price">R$ 79,90</p>
-                                <button class="btn-buy">Comprar</button>
+                                <button class="btn-buy" data-product="Adesivos Personalizados" data-price="79.90">Comprar</button>
                             </div>
                         </div>
                     </article>
@@ -121,9 +185,8 @@
                     <!-- Cartão de contato: telefone -->
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <!-- Ícone SVG de telefone -->
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 ..."/>
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
                         </div>
                         <h3>Telefone</h3>
@@ -133,9 +196,9 @@
                     <!-- Cartão de contato: email -->
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <!-- Ícone SVG de email -->
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12 ..."/>
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
                             </svg>
                         </div>
                         <h3>Email</h3>
@@ -145,9 +208,9 @@
                     <!-- Cartão de contato: endereço -->
                     <div class="contact-card">
                         <div class="contact-icon">
-                            <!-- Ícone SVG de localização -->
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6 ..."/>
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
                             </svg>
                         </div>
                         <h3>Endereço</h3>
@@ -169,9 +232,13 @@
                 <div class="footer-legal">
                     <p>&copy; 2024 Gráfica Premium. Todos os direitos reservados.</p>
                     <p>CNPJ: 00.000.000/0001-00</p>
+                    <p id="current-datetime"></p>
                 </div>
             </div>
         </div>
     </footer>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
