@@ -113,6 +113,14 @@ Este projeto atende aos seguintes requisitos da Atividade 3:
 - Objeto `Date()` para data e hora
 - `alert()` para mensagens ao usuário
 
+## Links do Projeto
+
+**GitHub Pages (Site Online):**
+https://pollyanasousa.github.io/grafica-moderna-ecommerce2/
+
+**Repositório GitHub:**
+https://github.com/pollyanasousa/grafica-moderna-ecommerce2
+
 ## Autor
 
 Desenvolvido como projeto acadêmico - Atividade 3
