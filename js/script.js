@@ -15,6 +15,7 @@ window.onload = function() {
     inicializarRelogio();
     inicializarCalculadoraFrete();
     inicializarCheckout();
+    inicializarMenuHamburguer();
 };
 
 // ==========================================
@@ -757,6 +758,54 @@ function limparCarrinho() {
     atualizarContadorCarrinho();
     var botaoCheckout = document.getElementById('checkout-btn');
     botaoCheckout.style.display = 'none';
+}
+
+// ==========================================
+// MÓDULO: MENU HAMBÚRGUER RESPONSIVO
+// Controla abertura/fechamento do menu lateral mobile
+// ==========================================
+
+/**
+ * Inicializa o menu hambúrguer responsivo
+ * Adiciona eventos de clique e controla animações
+ */
+function inicializarMenuHamburguer() {
+    var menuToggle = document.getElementById('menuToggle');
+    var navMenu = document.getElementById('navMenu');
+    var navLinks = document.querySelectorAll('.nav-link');
+    
+    /**
+     * Alterna estado do menu (aberto/fechado)
+     */
+    function toggleMenu() {
+        if (menuToggle && navMenu) {
+            menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        }
+    }
+    
+    // Evento do botão hambúrguer
+    if (menuToggle) {
+        menuToggle.onclick = toggleMenu;
+    }
+    
+    // Fecha menu ao clicar nos links (melhor UX mobile)
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
+            if (window.innerWidth <= 768 && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    }
+    
+    // Fecha menu ao clicar no overlay escuro
+    if (navMenu) {
+        navMenu.addEventListener('click', function(e) {
+            if (e.target === navMenu && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    }
 }
 
 // ==========================================

@@ -120,3 +120,10 @@ ES6, classes e separação do JavaScript em múltiplos arquivos.
 Este projeto consolida conceitos fundamentais de desenvolvimento front-end,
 consumo de APIs públicas e organização de código, simulando um cenário real
 de e-commerce com foco em boas práticas e experiência do usuário.
+
+## Acesso ao Projeto (GitHub Pages)
+
+O projeto está disponível online através do GitHub Pages no link abaixo:
+
+🔗 https://pollyanasousa.github.io/grafica-moderna-ecommerce---final/
+

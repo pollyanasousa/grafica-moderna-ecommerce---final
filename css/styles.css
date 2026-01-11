@@ -332,6 +332,10 @@ body {
     color: #333;
     margin-bottom: 10px;
     text-align: center;
+    position: relative; /* ← ADICIONE */
+    z-index: 15; /* ← ADICIONE */
+    background-color: white; /* ← ADICIONE */
+    padding-bottom: 5px; /* ← ADICIONE */
 }
 
 /* Descrição breve em cinza médio */
@@ -366,11 +370,12 @@ body {
     position: absolute;
     left: 20px;
     right: 20px;
+    top: 70px; 
     background-color: #f9f9f9;
-    padding: 15px;
+    padding: 12px;
     border-radius: 8px;
     text-align: left;
-    max-height: 200px;
+    max-height: 220px;
     overflow-y: auto;
     z-index: 10;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -384,9 +389,9 @@ body {
 
 /* Itens da lista de características */
 .product-details li {
-    padding: 5px 0;
+    padding: 3px 0; /* ← MENOR */
     color: #555;
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* ← FONTE MENOR */
 }
 
 /* Adiciona checkmark verde antes de cada item */
@@ -1043,22 +1048,121 @@ body {
 }
 
 /* ==========================================
+   BOTÃO HAMBÚRGUER - MENU MOBILE
+   Escondido no desktop, aparece no mobile
+   ========================================== */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Animação do X quando menu está aberto */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ==========================================
    RESPONSIVIDADE
    Media queries para dispositivos móveis
    ========================================== */
 
 /* Tablets e dispositivos médios (768px e menos) */
+
 @media (max-width: 768px) {
-    /* Header empilhado verticalmente */
-    .header .container {
-        flex-direction: column;
-        gap: 15px;
+    /* ==========================================
+       MENU HAMBÚRGUER MOBILE
+       ========================================== */
+    
+    /* Mostra o botão hambúrguer */
+    .menu-toggle {
+        display: block;
     }
     
-    /* Navegação vertical */
+    /* Menu lateral oculto por padrão */
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        flex-direction: column;
+        padding: 80px 20px 20px;
+        gap: 20px;
+        transition: right 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+    
+    /* Menu desliza para dentro quando aberto */
+    .nav.active {
+        right: 0;
+    }
+    
+    /* Lista vertical */
     .nav-list {
         flex-direction: column;
-        gap: 10px;
+        gap: 0;
+        width: 100%;
+    }
+    
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 15px;
+        width: 100%;
+    }
+    
+    .theme-toggle {
+        margin-top: 20px;
+    }
+    
+    /* Overlay escuro de fundo */
+    .nav::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+    
+    .nav.active::before {
+        opacity: 1;
+        pointer-events: auto;
     }
     
     /* Título hero menor */
@@ -1189,7 +1293,6 @@ body {
         padding: 6px;
     }
 }
-
 /* 
 ==========================================
 RESUMO DAS MELHORIAS APLICADAS (CLEAN CODE + UX)
