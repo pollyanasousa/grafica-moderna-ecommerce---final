@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- Meta tags essenciais para SEO e responsividade -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gráfica Online - Produtos gráficos de qualidade com entrega rápida">
-    <title>Gráfica Online - Impressões de Qualidade</title>
+    <meta name="description" content="Gráfica Online - Produtos gráficos de qualidade com entrega rápida em todo Brasil">
+    
+    <!-- Título da página exibido na aba do navegador -->
+    <title>Gráfica Premium - Impressões de Qualidade</title>
+    
+    <!-- Importação da folha de estilos -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Cabeçalho do site -->
+    <!-- ==========================================
+         CABEÇALHO PRINCIPAL
+         Header fixo com logo e navegação
+         ========================================== -->
     <header class="header">
         <div class="container">
+            <!-- Logo da empresa -->
             <div class="logo">
                 <h1>GRÁFICA <span>PREMIUM</span></h1>
             </div>
-            <!-- Menu de navegação principal -->
+            
+            <!-- Navegação principal com menu e botão de tema -->
             <nav class="nav" aria-label="Navegação principal">
+                <!-- Lista de links do menu -->
                 <ul class="nav-list">
                     <li><a href="#inicio" class="nav-link">Início</a></li>
                     <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                    <li><a href="#frete" class="nav-link">Calcular Frete</a></li>
                     <li><a href="#contato" class="nav-link">Contato</a></li>
                 </ul>
-                <!-- Botão de alternância de tema -->
+                
+                <!-- Botão para alternar entre tema claro e escuro -->
                 <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                    <!-- Ícone de sol (SVG inline) -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="5"/>
                         <line x1="12" y1="1" x2="12" y2="3"/>
@@ -39,75 +53,109 @@
         </div>
     </header>
 
-    <!-- Conteúdo principal -->
+    <!-- ==========================================
+         CONTEÚDO PRINCIPAL
+         Container de todas as seções da página
+         ========================================== -->
     <main class="main">
-        <!-- Seção inicial (hero) -->
+        <!-- ==========================================
+             SEÇÃO HERO
+             Banner principal com call-to-action
+             ========================================== -->
         <section id="inicio" class="hero">
             <div class="hero-content">
                 <h2 class="hero-title">Impressões que Fazem a Diferença</h2>
                 <p class="hero-subtitle">Qualidade Profissional Para o Seu Negócio</p>
+                <!-- Botão que leva à seção de produtos -->
                 <a href="#produtos" class="hero-btn">Ver Produtos</a>
             </div>
         </section>
 
-        <!-- Seção de produtos -->
+        <!-- ==========================================
+             SEÇÃO DE PRODUTOS
+             Catálogo de produtos disponíveis
+             ========================================== -->
         <section id="produtos" class="products">
             <div class="container">
+                <!-- Cabeçalho da seção -->
                 <h2 class="section-title">Nossos Produtos</h2>
                 <p class="section-subtitle">Soluções Completas em Impressão</p>
                 
-                <!-- Contador de itens adicionados -->
+                <!-- Contador de itens no carrinho -->
                 <div id="cart-counter" class="cart-counter">
+                    <!-- Ícone de carrinho de compras -->
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="9" cy="21" r="1"/>
                         <circle cx="20" cy="21" r="1"/>
                         <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                     </svg>
+                    <!-- Contador dinâmico atualizado via JavaScript -->
                     <span id="cart-count">0</span> itens adicionados
+                    <!-- Botão de finalizar compra (oculto por padrão) -->
+                    <button id="checkout-btn" class="btn-checkout" style="display: none;">Finalizar Compra</button>
                 </div>
 
+                <!-- Grade de produtos em layout responsivo -->
                 <div class="products-grid">
                     
-                    <!-- Produto 1 -->
+                    <!-- ==========================================
+                         PRODUTO 1: CARTÃO DE VISITA
+                         Produto mais popular
+                         ========================================== -->
                     <article class="product-card">
+                        <!-- Badge de destaque -->
                         <div class="product-badge">Popular</div>
+                        
+                        <!-- Imagem do produto -->
                         <div class="product-image">
-                            <img src="img/cartao-4x4.png" alt="Cartões de visita em papel couché com acabamento de qualidade">
+                            <img src="img/cartao.png" alt="Cartões de visita em papel couchê com acabamento de qualidade">
                         </div>
+                        
+                        <!-- Informações do produto -->
                         <div class="product-info">
                             <h3 class="product-name">Cartão de Visita</h3>
-                            <p class="product-description">Papel couché 300g com acabamento verniz localizado. Pacote com 100 unidades.</p>
+                            <p class="product-description">Papel couchê 300g com acabamento verniz localizado. Pacote com 100 unidades.</p>
+                            
+                            <!-- Botão para expandir detalhes técnicos -->
                             <button class="toggle-details">Ver Detalhes</button>
+                            
+                            <!-- Detalhes técnicos (ocultos por padrão) -->
                             <div class="product-details" style="display: none;">
                                 <ul>
                                     <li>Dimensões: 9x5 cm</li>
-                                    <li>Papel: Couché 300g</li>
+                                    <li>Papel: Couchê 300g</li>
                                     <li>Acabamento: Verniz localizado</li>
                                     <li>Impressão: 4x4 cores (frente e verso)</li>
                                     <li>Prazo de entrega: 3 dias úteis</li>
                                 </ul>
                             </div>
+                            
+                            <!-- Footer com preço e botão de compra -->
                             <div class="product-footer">
                                 <p class="product-price">R$ 49,90</p>
+                                <!-- Data attributes para armazenar informações do produto -->
                                 <button class="btn-buy" data-product="Cartão de Visita" data-price="49.90">Comprar</button>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Produto 2 -->
+                    <!-- ==========================================
+                         PRODUTO 2: PANFLETOS A5
+                         Produto em oferta
+                         ========================================== -->
                     <article class="product-card">
                         <div class="product-badge">Oferta</div>
                         <div class="product-image">
-                            <img src="img/Panfleto.png" alt="Panfletos coloridos em papel couché brilhante">
+                            <img src="img/panfletos.png" alt="Panfletos coloridos em papel couchê brilhante">
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Panfletos A5</h3>
-                            <p class="product-description">Impressão colorida frente e verso, papel couché 115g brilhante. 1000 unidades.</p>
+                            <p class="product-description">Impressão colorida frente e verso, papel couchê 115g brilhante. 1000 unidades.</p>
                             <button class="toggle-details">Ver Detalhes</button>
                             <div class="product-details" style="display: none;">
                                 <ul>
                                     <li>Dimensões: A5 (14,8x21 cm)</li>
-                                    <li>Papel: Couché 115g brilhante</li>
+                                    <li>Papel: Couchê 115g brilhante</li>
                                     <li>Impressão: 4x4 cores (frente e verso)</li>
                                     <li>Quantidade: 1000 unidades</li>
                                     <li>Prazo de entrega: 5 dias úteis</li>
@@ -120,10 +168,13 @@
                         </div>
                     </article>
 
-                    <!-- Produto 3 -->
+                    <!-- ==========================================
+                         PRODUTO 3: BANNER EM LONA
+                         Para uso externo e eventos
+                         ========================================== -->
                     <article class="product-card">
                         <div class="product-image">
-                            <img src="img/178_a68j2qh5pjq04hsay65ea.jpg" alt="Banner de lona resistente para uso externo">
+                            <img src="img/banner.png" alt="Banner de lona resistente para uso externo">
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Banner em Lona</h3>
@@ -145,11 +196,14 @@
                         </div>
                     </article>
 
-                    <!-- Produto 4 -->
+                    <!-- ==========================================
+                         PRODUTO 4: ADESIVOS PERSONALIZADOS
+                         Produto novo no catálogo
+                         ========================================== -->
                     <article class="product-card">
                         <div class="product-badge">Novo</div>
                         <div class="product-image">
-                            <img src="img/adesivo-impresso-em-qualquer-tamanho-16297543425868808612413e6a78df.png" alt="Adesivos personalizados com corte especial">
+                            <img src="img/adecivos.png" alt="Adesivos personalizados com corte especial">
                         </div>
                         <div class="product-info">
                             <h3 class="product-name">Adesivos Personalizados</h3>
@@ -171,20 +225,145 @@
                         </div>
                     </article>
 
+                    <!-- ==========================================
+                         PRODUTO 5: CAMISAS PERSONALIZADAS
+                         Produto popular
+                         ========================================== -->
+                    <article class="product-card">
+                        <div class="product-badge">Popular</div>
+                        <div class="product-image">
+                            <img src="img/camisas.png" alt="Camisas personalizadas com impressão de qualidade">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Camisas Personalizadas</h3>
+                            <p class="product-description">Camisas 100% algodão com impressão em silk ou transfer. Tamanhos P ao GG.</p>
+                            <button class="toggle-details">Ver Detalhes</button>
+                            <div class="product-details" style="display: none;">
+                                <ul>
+                                    <li>Material: 100% algodão</li>
+                                    <li>Tamanhos: P, M, G, GG</li>
+                                    <li>Impressão: Silk ou Transfer</li>
+                                    <li>Quantidade mínima: 10 unidades</li>
+                                    <li>Prazo de entrega: 7 dias úteis</li>
+                                </ul>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">R$ 35,00</p>
+                                <button class="btn-buy" data-product="Camisas Personalizadas" data-price="35.00">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ==========================================
+                         PRODUTO 6: COPOS PARA CARNAVAL
+                         Produto sazonal
+                         ========================================== -->
+                    <article class="product-card">
+                        <div class="product-badge">Carnaval</div>
+                        <div class="product-image">
+                            <img src="img/copo.png" alt="Copos personalizados para festas e eventos">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Copos para Carnaval</h3>
+                            <p class="product-description">Copos personalizados 300ml, perfeitos para festas e blocos de carnaval. Pacote com 50 unidades.</p>
+                            <button class="toggle-details">Ver Detalhes</button>
+                            <div class="product-details" style="display: none;">
+                                <ul>
+                                    <li>Capacidade: 300ml</li>
+                                    <li>Material: Plástico resistente</li>
+                                    <li>Impressão: Colorida personalizada</li>
+                                    <li>Quantidade: 50 unidades</li>
+                                    <li>Prazo de entrega: 5 dias úteis</li>
+                                </ul>
+                            </div>
+                            <div class="product-footer">
+                                <p class="product-price">R$ 89,90</p>
+                                <button class="btn-buy" data-product="Copos para Carnaval" data-price="89.90">Comprar</button>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <!-- Seção de contato -->
+        <!-- ==========================================
+     SEÇÃO DE CÁLCULO DE FRETE
+     Ferramenta para consultar CEP e calcular entrega
+     ========================================== -->
+        <section id="frete" class="shipping">
+            <div class="container">
+                <h2 class="section-title">Calcule o Frete</h2>
+                <p class="section-subtitle">Informe seu CEP para calcular o valor e prazo de entrega</p>
+                
+                <!-- Calculadora de frete -->
+                <div class="shipping-calculator">
+                    <!-- Input do CEP com validação -->
+                    <div class="input-group">
+                        <label for="cep-input">CEP:</label>
+                        <input 
+                            type="text" 
+                            id="cep-input" 
+                            placeholder="00000-000" 
+                            maxlength="9"
+                            aria-label="Digite seu CEP"
+                        >
+                        <button id="calculate-shipping" class="btn-calculate">
+                            Calcular Frete
+                        </button>
+
+                        <!-- ==========================================
+                            BOTÃO ADICIONADO
+                            Permite limpar resultado e realizar novo cálculo
+                            (Melhora UX sem alterar fluxo existente)
+                            ========================================== -->
+                        <button 
+                            id="clear-shipping" 
+                            class="btn-calculate"
+                            type="button"
+                        >
+                            Limpar
+                        </button>
+                    </div>
+                    
+                    <!-- Resultado da consulta (oculto por padrão) -->
+                    <div id="shipping-result" class="shipping-result" style="display: none;">
+                        <h3>Endereço de Entrega:</h3>
+                        <!-- Campos preenchidos dinamicamente via API ViaCEP -->
+                        <p><strong>Rua:</strong> <span id="street"></span></p>
+                        <p><strong>Bairro:</strong> <span id="neighborhood"></span></p>
+                        <p><strong>Cidade:</strong> <span id="city"></span></p>
+                        <p><strong>Estado:</strong> <span id="state"></span></p>
+                        <p class="shipping-price">
+                            <strong>Valor do Frete:</strong> R$ <span id="shipping-price"></span>
+                        </p>
+                        <p class="shipping-time">
+                            <strong>Prazo:</strong> <span id="shipping-time"></span> dias úteis
+                        </p>
+                    </div>
+                    
+                    <!-- Mensagem de erro (oculta por padrão) -->
+                    <div id="shipping-error" class="shipping-error" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ==========================================
+             SEÇÃO DE CONTATO
+             Informações de contato da empresa
+             ========================================== -->
         <section id="contato" class="contact">
             <div class="container">
                 <h2 class="section-title">Entre em Contato</h2>
                 <p class="section-subtitle">Estamos prontos para atender você</p>
                 
+                <!-- Grade de cards de contato -->
                 <div class="contact-grid">
-                    <!-- Cartão de contato: telefone -->
+                    <!-- Card de telefone -->
                     <div class="contact-card">
                         <div class="contact-icon">
+                            <!-- Ícone de telefone -->
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
@@ -193,9 +372,10 @@
                         <p>(81) 3333-4444</p>
                     </div>
 
-                    <!-- Cartão de contato: email -->
+                    <!-- Card de email -->
                     <div class="contact-card">
                         <div class="contact-icon">
+                            <!-- Ícone de email -->
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                 <polyline points="22,6 12,13 2,6"/>
@@ -205,9 +385,10 @@
                         <p>contato@graficapremium.com.br</p>
                     </div>
 
-                    <!-- Cartão de contato: endereço -->
+                    <!-- Card de endereço -->
                     <div class="contact-card">
                         <div class="contact-icon">
+                            <!-- Ícone de localização -->
                             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                 <circle cx="12" cy="10" r="3"/>
@@ -221,24 +402,181 @@
         </section>
     </main>
 
-    <!-- Rodapé -->
+    <!-- ==========================================
+         RODAPÉ
+         Informações da empresa e legais
+         ========================================== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Coluna 1: Informações da empresa -->
                 <div class="footer-info">
                     <h3>GRÁFICA <span>PREMIUM</span></h3>
                     <p>Impressões de qualidade desde 2010</p>
                 </div>
+                
+                <!-- Coluna 2: Informações legais -->
                 <div class="footer-legal">
                     <p>&copy; 2024 Gráfica Premium. Todos os direitos reservados.</p>
                     <p>CNPJ: 00.000.000/0001-00</p>
+                </div>
+                
+                <!-- Coluna 3: Data e hora com ícone de relógio -->
+                <div class="footer-datetime">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
                     <p id="current-datetime"></p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Link para o arquivo JavaScript -->
+    <!-- ==========================================
+         MODAL DE CHECKOUT
+         Tela de finalização de compra
+         ========================================== -->
+    <div id="checkout-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <!-- Botão de fechar modal -->
+            <span class="modal-close">&times;</span>
+            
+            <h2>Finalizar Compra</h2>
+            
+            <!-- Resumo dos itens do pedido -->
+            <div class="order-summary">
+                <h3>Resumo do Pedido</h3>
+                <!-- Lista preenchida dinamicamente pelo JavaScript -->
+                <div id="cart-items-list"></div>
+                
+                <!-- Totais do pedido -->
+                <div class="order-total">
+                    <p><strong>Subtotal:</strong> R$ <span id="subtotal">0,00</span></p>
+                    <p><strong>Frete:</strong> R$ <span id="frete-total">0,00</span></p>
+                    <p class="total-price"><strong>Total:</strong> R$ <span id="total-price">0,00</span></p>
+                </div>
+            </div>
+            
+            <!-- Métodos de pagamento -->
+            <div class="payment-methods">
+                <h3>Forma de Pagamento</h3>
+                
+                <!-- Opções de pagamento (radio buttons) -->
+                <div class="payment-options">
+                    <!-- PIX (selecionado por padrão) -->
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="pix" checked>
+                        <span>PIX (Aprovação imediata)</span>
+                    </label>
+                    
+                    <!-- Boleto bancário -->
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="boleto">
+                        <span>Boleto Bancário (1-3 dias úteis)</span>
+                    </label>
+                    
+                    <!-- Cartão de crédito -->
+                    <label class="payment-option">
+                        <input type="radio" name="payment" value="cartao">
+                        <span>Cartão de Crédito</span>
+                    </label>
+                </div>
+                
+                <!-- ==========================================
+                     ÁREA DE PAGAMENTO PIX
+                     QR Code e código para pagamento
+                     ========================================== -->
+                <div id="pix-area" class="payment-area">
+                    <p>Escaneie o QR Code abaixo com o app do seu banco:</p>
+                    <div class="qrcode-image">
+                        <img src="img/qr_code_PNG33 - Copia.png" alt="QR Code PIX">
+                    </div>
+                    <!-- Código PIX gerado dinamicamente -->
+                    <p class="pix-code">Código PIX: <strong id="pix-code"></strong></p>
+                </div>
+                
+                <!-- ==========================================
+                     ÁREA DE PAGAMENTO BOLETO
+                     Código de barras e informações
+                     ========================================== -->
+                <div id="boleto-area" class="payment-area" style="display: none;">
+                    <p>Código de barras do boleto:</p>
+                    <div class="barcode-image">
+                        <img src="img/boleto-logo-0.png" alt="Código de Barras Boleto">
+                    </div>
+                    <!-- Código do boleto gerado dinamicamente -->
+                    <p class="boleto-code"><strong id="boleto-code"></strong></p>
+                    <p class="warning">Vencimento: 3 dias úteis</p>
+                </div>
+                
+                <!-- ==========================================
+                     ÁREA DE PAGAMENTO CARTÃO
+                     Formulário com dados do cartão
+                     ========================================== -->
+                <div id="cartao-area" class="payment-area" style="display: none;">
+                    <div class="card-form">
+                        <!-- Número do cartão -->
+                        <div class="form-group">
+                            <label>Número do Cartão:</label>
+                            <input type="text" id="card-number" placeholder="0000 0000 0000 0000" maxlength="19">
+                        </div>
+                        
+                        <!-- Nome no cartão -->
+                        <div class="form-group">
+                            <label>Nome no Cartão:</label>
+                            <input type="text" id="card-name" placeholder="NOME COMPLETO">
+                        </div>
+                        
+                        <!-- Validade e CVV lado a lado -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Validade:</label>
+                                <input type="text" id="card-expiry" placeholder="MM/AA" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV:</label>
+                                <input type="text" id="card-cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botão de confirmar pagamento -->
+            <button id="confirm-payment" class="btn-confirm">Confirmar Pagamento</button>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         MODAL DE SUCESSO
+         Confirmação do pedido
+         ========================================== -->
+    <div id="success-modal" class="modal" style="display: none;">
+        <div class="modal-content success-content">
+            <!-- Ícone de sucesso (checkmark verde) -->
+            <div class="success-icon">
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+            
+            <h2>Pedido Confirmado!</h2>
+            
+            <!-- Número do pedido gerado -->
+            <p class="order-number">Número do Pedido: <strong id="order-number"></strong></p>
+            <p>Pagamento aprovado com sucesso!</p>
+            
+            <!-- Data de entrega estimada -->
+            <p class="delivery-info">Previsão de entrega: <strong id="delivery-date"></strong></p>
+            
+            <!-- Botão para fechar modal -->
+            <button id="close-success" class="btn-confirm">Continuar Comprando</button>
+        </div>
+    </div>
+
+    <!-- Importação do JavaScript principal -->
     <script src="js/script.js"></script>
 </body>
 </html>

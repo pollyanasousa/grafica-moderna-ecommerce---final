@@ -1,130 +1,122 @@
-# Gráfica Premium - E-commerce (Versão com JavaScript)
+# Projeto Final – E-commerce com API, JavaScript e Clean Code
 
-## Sobre o Projeto
+## Descrição do Projeto
 
-Este é um projeto de e-commerce para uma gráfica online, desenvolvido como parte da **Atividade 3** do curso, focado em adicionar interatividade com **JavaScript**.
+Este projeto consiste em um e-commerce desenvolvido com **HTML, CSS e JavaScript**, com foco em boas práticas de organização de código, acessibilidade e consumo de **APIs públicas**.  
+A aplicação simula uma gráfica online, permitindo a visualização de produtos, adição ao carrinho, cálculo de frete e finalização de compra.
 
-Esta versão inclui funcionalidades dinâmicas implementadas com JavaScript puro (vanilla JS), diferente da versão anterior que continha apenas HTML e CSS.
+O projeto foi desenvolvido como atividade final do curso, aplicando conceitos de **Clean Code**, **manipulação do DOM** e **integração com APIs externas**.
 
-## Funcionalidades JavaScript
+---
 
-Este projeto implementa as seguintes funcionalidades dinâmicas:
+## Funcionalidades Principais
 
-### 1. Alerta de Confirmação
-- Ao clicar no botão "Comprar", exibe um alerta com o nome do produto adicionado
-- Mostra o total de itens no carrinho
+- Exibição de catálogo de produtos  
+- Adição de produtos ao carrinho  
+- Contador dinâmico de itens  
+- Modal de checkout com resumo do pedido  
+- Cálculo de frete baseado no CEP  
+- Consumo de API pública para busca de endereço  
+- Alternância entre tema claro e escuro  
+- Exibição de data e hora em tempo real  
+- Simulação de formas de pagamento (PIX, boleto e cartão)  
 
-### 2. Contador de Itens no Carrinho
-- Conta quantos produtos foram adicionados ao carrinho
-- Exibe o número total de itens na tela
-- Atualiza dinamicamente a cada clique
-
-### 3. Alternância de Tema Claro/Escuro
-- Botão no cabeçalho para alternar entre tema claro e escuro
-- Salva a preferência do usuário no navegador
-- Transições suaves entre os temas
-
-### 4. Mostrar/Ocultar Detalhes do Produto
-- Botão "Ver Detalhes" em cada produto
-- Exibe especificações técnicas completas
-- Alterna dinamicamente o texto do botão
-
-### 5. Data e Hora em Tempo Real
-- Exibe data e hora atual no rodapé
-- Atualiza automaticamente a cada segundo
-- Formato brasileiro: DD/MM/AAAA - HH:MM:SS
-
-## Estrutura de Arquivos
-
-```
-grafica-moderna-ecommerce2/
-│
-├── index.html          # Estrutura HTML da página
-│
-├── css/
-│   └── styles.css      # Estilos CSS (tema claro e escuro)
-│
-├── js/
-│   └── script.js       # Funcionalidades JavaScript
-│
-├── img/                # Imagens dos produtos
-│   ├── cartao-4x4.png
-│   ├── Panfleto.png
-│   ├── 178_a68j2qh5pjq04hsay65ea.jpg
-│   └── adesivo-impresso-em-qualquer-tamanho-16297543425868808612413e6a78df.png
-│
-└── README.md           # Documentação do projeto
-```
+---
 
 ## Tecnologias Utilizadas
 
-- **HTML5** - Estrutura semântica da página
-- **CSS3** - Estilização e layout responsivo
-- **JavaScript (Vanilla)** - Interatividade e funcionalidades dinâmicas
+- HTML5 (semântico)  
+- CSS3 (responsivo)  
+- JavaScript (Vanilla JS)  
+- API ViaCEP  
+
+---
+
+## Estrutura de Pastas
+
+/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── script.js
+├── img/
+│   └── imagens dos produtos
+└── README.md
+
+---
+
+## Consumo de API Pública
+
+### API Utilizada
+
+- ViaCEP  
+- Endpoint: https://viacep.com.br/ws/{CEP}/json/
+
+### Finalidade
+
+A API é utilizada para:
+
+- Buscar o endereço com base no CEP informado pelo usuário  
+- Calcular o valor do frete de acordo com a região  
+- Definir o prazo de entrega dinamicamente  
+
+O consumo da API é feito utilizando o método fetch(), com validação de dados e tratamento de erros.
+
+---
+
+## Acessibilidade
+
+O projeto aplica princípios básicos de acessibilidade, como:
+
+- Uso de HTML semântico  
+- Uso de atributos alt em imagens  
+- Contraste adequado entre cores  
+- Labels associados aos inputs  
+- Estrutura clara de navegação  
+
+---
+
+## Aplicação do Clean Code
+
+Durante o desenvolvimento do projeto, foram aplicados os seguintes princípios de Clean Code:
+
+- Nomes de variáveis e funções claros e descritivos  
+- Separação de responsabilidades por módulos  
+- Funções pequenas e objetivas  
+- Comentários curtos e úteis  
+- Código organizado e bem indentado  
+- Evita duplicação de código  
+- Uso de uma única fonte de verdade para dados compartilhados  
+
+---
+
+## Reflexão sobre Clean Code
+
+/*
+Durante o desenvolvimento deste projeto, procurei aplicar os princípios
+do Clean Code organizando o JavaScript em módulos bem definidos, com
+funções pequenas e nomes claros que facilitam a leitura e manutenção.
+
+Evitei duplicação de lógica, centralizando cálculos importantes como
+frete e prazo de entrega em funções específicas.
+
+Como melhoria futura, o código pode ser refatorado para uso de módulos
+ES6, classes e separação do JavaScript em múltiplos arquivos.
+*/
+
+---
 
 ## Como Executar o Projeto
 
-1. Clone este repositório
-2. Abra o arquivo `index.html` em seu navegador
-3. Ou use um servidor local como Live Server no VS Code
+1. Faça o download ou clone o projeto  
+2. Abra o arquivo index.html em um navegador  
+3. Navegue pelo site e teste as funcionalidades  
 
-## Diferenças da Versão Anterior
+---
 
-Esta é a **versão 2** do projeto, que adiciona:
+## Considerações Finais
 
-- Arquivo `script.js` com JavaScript
-- Funcionalidades interativas (alerta, contador, tema, etc.)
-- Seção de detalhes expansível nos produtos
-- Relógio com data e hora em tempo real
-- Botão de alternância de tema claro/escuro
-
-A **versão 1** (repositório anterior) contém apenas HTML e CSS estáticos.
-
-## Requisitos da Atividade
-
-Este projeto atende aos seguintes requisitos da Atividade 3:
-
-- [x] Arquivo JavaScript separado (js/script.js)
-- [x] Integração com HTML usando tag script
-- [x] Mínimo de 2 funcionalidades dinâmicas (implementadas 5)
-- [x] Código organizado e comentado
-- [x] Uso de JavaScript puro (sem bibliotecas externas)
-- [x] Nomes de variáveis compreensíveis
-- [x] Indentação e formatação adequadas
-
-## Funcionalidades Implementadas vs Sugeridas
-
-**Implementadas neste projeto:**
-- a) Exibir alerta de confirmação ao clicar no botão "Comprar"
-- b) Mostrar data e hora atual no rodapé
-- c) Alternar entre modo claro e escuro com botão
-- d) Mostrar/esconder seção de detalhes do produto
-- e) Contar número de cliques no botão de compra e exibir na tela
-
-## Conceitos JavaScript Utilizados
-
-- Variáveis com `var`
-- Estruturas de repetição `for`
-- Condicionais `if/else`
-- Eventos `onclick` e `addEventListener`
-- Manipulação do DOM (`getElementById`, `querySelectorAll`)
-- Funções
-- `setInterval()` para atualização periódica
-- Objeto `Date()` para data e hora
-- `alert()` para mensagens ao usuário
-
-## Links do Projeto
-
-**GitHub Pages (Site Online):**
-https://pollyanasousa.github.io/grafica-moderna-ecommerce2/
-
-**Repositório GitHub:**
-https://github.com/pollyanasousa/grafica-moderna-ecommerce2
-
-## Autor
-
-Desenvolvido como projeto acadêmico - Atividade 3
-
-## Licença
-
-Este projeto é de uso educacional.
+Este projeto consolida conceitos fundamentais de desenvolvimento front-end,
+consumo de APIs públicas e organização de código, simulando um cenário real
+de e-commerce com foco em boas práticas e experiência do usuário.
